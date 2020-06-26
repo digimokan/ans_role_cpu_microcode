@@ -31,9 +31,9 @@ Ansible role to configure CPU microcode updates to load at boot.
 
    ```
    # requirements.yml
-   src: https://github.com/digimokan/ans-role-cpu-microcode
-   version: master
-   name: config-cpu-microcode
+   - src: https://github.com/digimokan/ans-role-cpu-microcode
+     version: master
+     name: config-cpu-microcode
    ```
 
 2. From the project root directory, install the role:
