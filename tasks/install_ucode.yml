@@ -1,4 +1,5 @@
-- name: "Install CPU microcode for Arch Linuxj w"
+- name: "Install CPU microcode for Arch Linux"
   include_tasks: install_ucode_archlinux.yml
-  when: ansible_os_family == "Archlinux"
+  # when: ansible_os_family == "Archlinux"
+  when: ansible_os_family == "Ubuntu"
 
