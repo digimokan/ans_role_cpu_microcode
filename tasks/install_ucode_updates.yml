@@ -1,0 +1,6 @@
+- name: "Install Intel/AMD CPU microcode-updates package"
+  pacman:
+    name: "{{ cpu_type }}-ucode"
+    state: present
+  when: ansible_os_family == "Archlinux"
+

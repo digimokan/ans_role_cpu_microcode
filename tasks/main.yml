@@ -1,6 +1,9 @@
 - name: "Determine CPU type (Intel, AMD, etc.)"
   include_tasks: get_cpu_type.yml
 
+- name: "Install required package(s) containing microcode updates"
+  include_tasks: install_ucode_updates.yml
+
 - name: "Install microcode-updates and load early (before initramfs) with GRUB"
   block:
     - name: "Check if {{ grub_cfg_path }} exists, indicating GRUB bootloader"
@@ -11,10 +14,6 @@
       fail:
         msg: "{{ grub_cfg_path }} not present: GRUB required to set up ucode"
       when: grub_cfg_file.stat.exists == false
-    - name: "Install Intel/AMD CPU microcode-updates package"
-      pacman:
-        name: "{{ cpu_type }}-ucode"
-        state: present
     - name: "Add grub.cfg variable for the microcode-updates image in /boot"
       lineinfile:
         path: "{{ grub_cfg_path }}"

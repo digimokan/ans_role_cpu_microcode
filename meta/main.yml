@@ -4,9 +4,9 @@ galaxy_info:
   license: "MIT"
   min_ansible_version: 2.4
   platforms:
-  - name: Archlinux
-    versions:
-    - all
+    - name: Archlinux
+      versions:
+        - all
   galaxy_tags:
     - archlinux
     - microcode
