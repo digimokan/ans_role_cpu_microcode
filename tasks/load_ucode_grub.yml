@@ -3,23 +3,35 @@
     msg: "{{ cpu_microcode_grub_cfg_path }} file not found"
   when: cpu_microcode_grub_cfg_path is not exists
 
-- name: "Add grub.cfg variable for the microcode-updates image in /boot"
-  lineinfile:
-    path: "{{ cpu_microcode_grub_cfg_path }}"
-    regexp: '^set ucode_updates='
-    line: "set ucode_updates=\"{{ ucode_updates_img }}\""
-    insertafter: '^# select initramfs to boot$'
-    state: present
-  vars:
-    ucode_updates_img: "{{ cpu_microcode_boot_dir_path }}/{{ cpu_type }}-ucode.img"
-  become: true
-  become_user: root
+# - name: "Add grub.cfg variable for the microcode-updates image in /boot"
+#   lineinfile:
+#     path: "{{ cpu_microcode_grub_cfg_path }}"
+#     regexp: '^set ucode_updates='
+#     line: "set ucode_updates=\"{{ ucode_updates_img }}\""
+#     insertafter: '^# select initramfs to boot$'
+#     state: present
+#   vars:
+#     ucode_updates_img: "{{ cpu_microcode_boot_dir_path }}/{{ cpu_type }}-ucode.img"
+#   become: true
+#   become_user: root
+
+# - name: "Set grub.cfg to load microcode-updates image before initramfs"
+#   replace:
+#     path: "{{ cpu_microcode_grub_cfg_path }}"
+#     regexp: '^(\s*)initrd (\${\w+_initramfs})$'
+#     replace: '\1initrd ${ucode_updates} \2'
+#   become: true
+#   become_user: root
 
 - name: "Set grub.cfg to load microcode-updates image before initramfs"
   replace:
     path: "{{ cpu_microcode_grub_cfg_path }}"
-    regexp: '^(\s*)initrd (\${\w+_initramfs})$'
-    replace: '\1initrd ${ucode_updates} \2'
+    regexp: >-
+      ^(\s*initrd\s*)(\b\S+\b\s*)$
+    replace: >-
+      \1'{{ ucode_updates_img }}'\2
+  vars:
+    ucode_updates_img: "{{ cpu_microcode_boot_dir_path }}/{{ cpu_type }}-ucode.img"
   become: true
   become_user: root
 
