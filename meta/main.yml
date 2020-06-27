@@ -2,7 +2,7 @@ galaxy_info:
   author: digimokan
   description: "Configure Intel/AMD CPU microcode updates to load at boot"
   license: "MIT"
-  min_ansible_version: 2.4
+  min_ansible_version: 2.5
   platforms:
     - name: Archlinux
       versions:
