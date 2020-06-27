@@ -56,7 +56,9 @@ Ansible role to configure CPU microcode updates to load at boot.
 
 ## Role Options
 
-None
+See the role `defaults` file for full listing:
+
+  * [defaults/main.yml](../defaults/main.yml)
 
 ## Contributing
 
