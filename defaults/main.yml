@@ -1,0 +1,12 @@
+################################################################################
+# default variables: placeholders - should mostly override when using the role
+################################################################################
+
+# path to grub.cfg file (for GRUB bootloader)
+cpu_microcode_grub_cfg_path: "/boot/grub/grub.cfg"
+
+# path to /boot directory
+# NOTE: in legacy (ext4), often it's just '/boot'
+# NOTE: for zfs installs, use boot env such as '/ROOT/default/@/boot'
+cpu_microcode_boot_dir_path: "/boot"
+
