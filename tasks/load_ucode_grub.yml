@@ -27,9 +27,9 @@
   replace:
     path: "{{ cpu_microcode_grub_cfg_path }}"
     regexp: >-
-      ^(\s*initrd\s*)(\b\S+\b\s*)$
+      ^(\s*initrd) (\S+)$
     replace: >-
-      \1'{{ ucode_updates_img }}'\2
+      \1 '{{ ucode_updates_img }}' \2
   vars:
     ucode_updates_img: "{{ cpu_microcode_boot_dir_path }}/{{ cpu_type }}-ucode.img"
   become: true
