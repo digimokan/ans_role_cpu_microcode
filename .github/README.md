@@ -36,11 +36,13 @@ Ansible role to configure CPU microcode updates to load at boot.
      name: config-cpu-microcode
    ```
 
-2. From the project root directory, install the role:
+2. From the project root directory, install/download the role:
 
    ```shell
-   $ ansible-galaxy install --role-file requirements.yml --roles-path ./roles
+   $ ansible-galaxy install --role-file requirements.yml --roles-path --force-with-deps ./roles
    ```
+
+   * _NOTE:_ `--force-with-deps` _ensures subsequent calls download updates_
 
 3. Include the role like any local role, from the project playbook:
 
