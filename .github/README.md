@@ -10,7 +10,7 @@ Ansible role to configure CPU microcode updates to load at boot.
 * [Purpose](#purpose)
 * [Supported Operating Systems](#supported-operating-systems)
 * [Quick Start](#quick-start)
-    * [Load Role Via Ansible Galaxy](#load-role-via-ansible-galaxy)
+    * [Load Role Via Ansible Galaxy](#load-role-via-ansible-galaxy-command)
 * [Role Options](#role-options)
 * [Contributing](#contributing)
 
@@ -25,7 +25,7 @@ Ansible role to configure CPU microcode updates to load at boot.
 
 ## Quick Start
 
-### Load Role Via Ansible Galaxy
+### Load Role Via `ansible-galaxy` Command
 
 1. Create `requirements.yml` in ansible project root, and add this content:
 
@@ -39,7 +39,7 @@ Ansible role to configure CPU microcode updates to load at boot.
 2. From the project root directory, install/download the role:
 
    ```shell
-   $ ansible-galaxy install --role-file requirements.yml --roles-path --force-with-deps ./roles
+   $ ansible-galaxy install --role-file requirements.yml --roles-path ./roles --force-with-deps
    ```
 
    * _NOTE:_ `--force-with-deps` _ensures subsequent calls download updates_
