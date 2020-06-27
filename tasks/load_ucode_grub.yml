@@ -9,9 +9,7 @@
     regexp: >-
       ^(\s*initrd)(\s+)(\S+)$
     replace: >-
-      \1\2{{ ucode_updates_img }} \3
-  vars:
-    ucode_updates_img: "{{ cpu_microcode_boot_dir_path }}/{{ cpu_type }}-ucode.img"
+      \1\2{{ ucode_updates_img_path }} \3
   become: true
   become_user: root
 
