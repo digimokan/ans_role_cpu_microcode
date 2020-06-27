@@ -10,7 +10,7 @@ Ansible role to configure CPU microcode updates to load at boot.
 * [Purpose](#purpose)
 * [Supported Operating Systems](#supported-operating-systems)
 * [Quick Start](#quick-start)
-    * [Load Role Via Ansible Galaxy Command](#load-role-via-ansible-galaxy-command)
+    * [Load Role Via `ansible-galaxy` Command](#load-role-via-ansible-galaxy-command)
 * [Role Options](#role-options)
 * [Contributing](#contributing)
 
