@@ -1,0 +1,12 @@
+- name: "Set the cpu_type play fact"
+  set_fact:
+    cpu_type: "{{ 'amd' if amd_cpu|length > 0 else 'intel' if intel_cpu|length > 0 else 'unknown' }}"
+  vars:
+    intel_cpu: "{{ ansible_processor | select('match', 'Intel') | list }}"
+    amd_cpu: "{{ ansible_processor | select('match', 'AMD') | list }}"
+
+- name: "Abort if unknown cpu_type"
+  fail:
+    msg: "cpu-type not recognized"
+  when: cpu_type == 'unknown'
+
