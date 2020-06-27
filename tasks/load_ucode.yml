@@ -6,6 +6,5 @@
 
 - name: "Configure GRUB bootloader to load microcode updates at boot time"
   include_tasks: load_ucode_grub.yml
-  # when: grub_exists.rc == 0
-  when: grub_exists.rc == 5
+  when: grub_exists.rc == 0
 
