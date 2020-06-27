@@ -1,6 +1,7 @@
 - name: "Check if GRUB bootloader installed"
   command: grub-install --version
   register: grub_exists
+  changed_when: false
   ignore_errors: yes
 
 - name: "Configure GRUB bootloader to load microcode updates at boot time"
