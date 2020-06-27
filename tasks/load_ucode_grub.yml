@@ -7,7 +7,7 @@
   fail:
     msg: "{{ cpu_microcode_grub_cfg_path }} file not found"
   # when: grub_cfg_file.stat.exists == false
-  when: "{{ cpu_microcode_grub_cfg_path }}" is exists
+  when: cpu_microcode_grub_cfg_path is exists
 
 - name: "Add grub.cfg variable for the microcode-updates image in /boot"
   lineinfile:
