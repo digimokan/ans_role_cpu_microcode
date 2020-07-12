@@ -5,5 +5,5 @@
 
 - name: "Set the ucode_updates_img_path play fact"
   set_fact:
-    ucode_updates_img_path: "{{ cpu_microcode_boot_dir_path }}/{{ cpu_type }}-ucode.img"
+    ucode_updates_img_path: "{{ boot_dir_path }}/{{ cpu_type }}-ucode.img"
 

@@ -1,8 +1,8 @@
 # path to grub.cfg file (for GRUB bootloader)
-cpu_microcode_grub_cfg_path: "/boot/grub/grub.cfg"
+grub_cfg_file_path: "/boot/grub/grub.cfg"
 
 # path to /boot directory
 #   - note: for legacy filesystem (e.g. ext4), often it's just '/boot'
 #   - note: for zfs, use boot env such as '/ROOT/default/@/boot'
-cpu_microcode_boot_dir_path: "/boot"
+boot_dir_path: "/boot"
 

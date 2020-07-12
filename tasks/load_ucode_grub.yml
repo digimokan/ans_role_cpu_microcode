@@ -1,11 +1,11 @@
-- name: "Abort if {{ cpu_microcode_grub_cfg_path }} file not found"
+- name: "Abort if {{ grub_cfg_file_path }} file not found"
   fail:
-    msg: "{{ cpu_microcode_grub_cfg_path }} file not found"
-  when: cpu_microcode_grub_cfg_path is not exists
+    msg: "{{ grub_cfg_file_path }} file not found"
+  when: grub_cfg_file_path is not exists
 
 - name: "Set grub.cfg to load microcode-updates image before initramfs"
   replace:
-    path: "{{ cpu_microcode_grub_cfg_path }}"
+    path: "{{ grub_cfg_file_path }}"
     regexp: >-
       ^(\s*initrd)(\s+)(\S+)$
     replace: >-
