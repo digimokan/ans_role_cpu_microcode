@@ -1,8 +1,8 @@
-# ans-role-cpu-microcode
+# ans_role_cpu_microcode
 
 Ansible role to configure CPU microcode updates to load at boot.
 
-[![Release](https://img.shields.io/github/release/digimokan/ans-role-cpu-microcode.svg?label=release)](https://github.com/digimokan/ans-role-cpu-microcode/releases/latest "Latest Release Notes")
+[![Release](https://img.shields.io/github/release/digimokan/ans_role_cpu_microcode.svg?label=release)](https://github.com/digimokan/ans_role_cpu_microcode/releases/latest "Latest Release Notes")
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?label=license)](LICENSE.md "Project License")
 
 ## Table Of Contents
@@ -31,7 +31,7 @@ Ansible role to configure CPU microcode updates to load at boot.
 
    ```yaml
    # requirements.yml
-   - src: https://github.com/digimokan/ans-role-cpu-microcode
+   - src: https://github.com/digimokan/ans_role_cpu_microcode
      version: master
      name: config-cpu-microcode
    ```
@@ -65,7 +65,7 @@ See the role `defaults` file for full listing:
 ## Contributing
 
 * Feel free to report a bug or propose a feature by opening a new
-  [Issue](https://github.com/digimokan/ans-role-cpu-microcode/issues).
+  [Issue](https://github.com/digimokan/ans_role_cpu_microcode/issues).
 * Follow the project's [Contributing](CONTRIBUTING.md) guidelines.
 * Respect the project's [Code Of Conduct](CODE_OF_CONDUCT.md).
 
