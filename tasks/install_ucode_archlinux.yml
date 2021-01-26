@@ -1,9 +1,9 @@
 - name: "Install Intel/AMD CPU microcode-updates package"
-  pacman:
+  community.general.pacman:
     name: "{{ cpu_type }}-ucode"
     state: present
 
 - name: "Set the ucode_updates_img_path play fact"
-  set_fact:
+  ansible.builtin.set_fact:
     ucode_updates_img_path: "{{ boot_dir_path }}/{{ cpu_type }}-ucode.img"
 

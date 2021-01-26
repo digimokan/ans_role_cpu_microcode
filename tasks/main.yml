@@ -1,9 +1,9 @@
 - name: "Determine CPU type (Intel, AMD, etc.), and abort if unknown"
-  include_tasks: get_cpu_type.yml
+  ansible.builtin.include_tasks: get_cpu_type.yml
 
 - name: "Install required package(s) containing microcode updates"
-  include_tasks: install_ucode.yml
+  ansible.builtin.include_tasks: install_ucode.yml
 
 - name: "Configure bootloader to load microcode updates"
-  include_tasks: load_ucode.yml
+  ansible.builtin.include_tasks: load_ucode.yml
 

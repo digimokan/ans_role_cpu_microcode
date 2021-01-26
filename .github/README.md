@@ -50,7 +50,7 @@ Ansible role to configure CPU microcode updates to load at boot.
      connection: local
      tasks:
        - name: "Configure CPU microcode to load at boot"
-         include_role:
+         ansible.builtin.include_role:
            name: ans_role_cpu_microcode
    ```
 
