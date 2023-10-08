@@ -2,7 +2,7 @@
   ansible.builtin.command: grub-install --version
   register: grub_exists
   changed_when: false
-  ignore_errors: yes
+  ignore_errors: true
 
 - name: "Configure GRUB bootloader to load microcode updates at boot time"
   ansible.builtin.include_tasks: load_ucode_grub.yml
